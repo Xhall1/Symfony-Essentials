@@ -15,4 +15,16 @@ final class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/home/greetings', name: 'home_greetings')]
+    public function greetings(): Response
+    {
+        die("Hey, im your greetings");
+    }
+
+    #[Route('/home/bye', name: 'home_bye')]
+    public function bye()
+    {
+        die("Goodbye...");
+    }
 }
