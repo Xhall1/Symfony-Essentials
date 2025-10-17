@@ -24,5 +24,17 @@ final class TemplateController extends AbstractController
         die("id={$id} | slug={$slug}");
     }
 
-
+    // Managing Errors and 404 Pages
+    #[Route('/template/exception/{id}/{slug}', name: 'template_exception', defaults:
+        ['id'=>1, 'slug'=>"default value"])]
+    public function exception(int $id, string $slug): Response
+    {
+        if($id === 1)
+        {
+            die("id={$id} and slug={$slug}");
+        } else
+        {
+            throw $this->createNotFoundException('Esta URL no está disponible');
+        }
+    }
 }
