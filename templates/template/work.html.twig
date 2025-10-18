@@ -1,7 +1,29 @@
 <h1>Hey {{ name }} {{ surname }}</h1>
-{% set age=42  %} <!-- VARIABLE DECLARATION -->
+{% set age=16  %} <!-- VARIABLE DECLARATION -->
 <p>Your age is {{ age }}</p>
 
 <p>
-    {{ dump(countries) }}
+    {% if  age >=18%}
+        Youre an adult
+    {% else %}
+        Youre a minor
+    {% endif %}
 </p>
+
+<div>
+    <h3>Countries</h3>
+    <ul>
+        {% for country in countries %}
+        <li>
+            ID: {{ country.id }} |
+            Name: {{ country.name }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<p>
+    {{ include('include.html.twig') }}
+</p>
+
+<p> {{ dump(countries) }} </p>
