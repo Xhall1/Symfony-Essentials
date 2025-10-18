@@ -1,5 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        citria: 'www.citriadev.com'
 
 when@test:
     twig:

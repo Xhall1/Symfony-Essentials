@@ -64,7 +64,6 @@ final class TemplateController extends AbstractController
                 "name" => "Chile",
                 "id" => 2
             ),
-
         );
         return $this->render('template/work.html.twig', compact(
             'name', 'surname', 'countries'
