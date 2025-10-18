@@ -43,8 +43,31 @@ final class TemplateController extends AbstractController
 
         $name = "San";
         $surname = "Torres";
+        $countries = array(
+            array(
+                "name" => "Colombia",
+                "id" => 1
+            ),
+            array(
+                "name" => "Chile",
+                "id" => 2
+            ),
+            array(
+                "name" => "Venezuela",
+                "id" => 3
+            ),
+            array(
+                "name" => "Argentina",
+                "id" => 4
+            ),
+            array(
+                "name" => "Chile",
+                "id" => 2
+            ),
+
+        );
         return $this->render('template/work.html.twig', compact(
-            'name', 'surname'
+            'name', 'surname', 'countries'
         ));
 //        return $this->render('template/work.html.twig', [
 //            "name" => $name,
