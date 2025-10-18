@@ -8,11 +8,17 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class TemplateController extends AbstractController
 {
-    #[Route('/template', name: 'template_index')]
+    #[Route('/', name: 'template_index')]
     public function index(): Response
     {
         return $this->render('template/index.html.twig');
     }
+    #[Route('/template/layout', name: 'template_layout')]
+    public function layout(): Response
+    {
+        return $this->render('template/layout.html.twig');;
+    }
+
 
     // The thing i did was set parameters and set default parameters
     #[Route('/template/parameter/{id}/{slug}', name: 'template_parameter', defaults:
