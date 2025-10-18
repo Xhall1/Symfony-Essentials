@@ -11,9 +11,7 @@ final class TemplateController extends AbstractController
     #[Route('/template', name: 'template_index')]
     public function index(): Response
     {
-        return $this->render('template/index.html.twig', [
-            'controller_name' => 'TemplateController',
-        ]);
+        return $this->render('template/index.html.twig');
     }
 
     // The thing i did was set parameters and set default parameters
@@ -37,4 +35,27 @@ final class TemplateController extends AbstractController
             throw $this->createNotFoundException('Esta URL no está disponible');
         }
     }
+
+    #[Route('/template/work', name: 'template_work')]
+    public function work(): Response
+    {
+        // Interpolation
+
+        $name = "San";
+        $surname = "Torres";
+        return $this->render('template/work.html.twig', compact(
+            'name', 'surname'
+        ));
+//        return $this->render('template/work.html.twig', [
+//            "name" => $name,
+//            "surname" => $surname
+//        ]);
+//
+//        return $this->render('template/work.html.twig', [
+//            "name" => "San",
+//            "surname" => "Torres"
+//        ]);
+
+    }
+
 }
